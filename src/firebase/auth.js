@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -39,6 +40,7 @@ signInWithPopup(auth, provider)
     // const token = credential.accessToken;
     // // The signed-in user info.
     const user = result.user;
+    
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -90,3 +92,14 @@ export const signInWithEmail = (email, password) =>  signInWithEmailAndPassword(
   });
 
 // signInWithEmail('rociolaboratoria@gmai.com', '12345678');
+
+/* ---------- Firebase Auth - signOut---------- */
+export const signOutLogOut = () => signOut(auth)
+.then(() => {
+  console.log('sign out')
+  // Sign-out successful.
+}).catch((error) => {
+  const errorCode = error.code;
+    const errorMessage = error.message;
+  // An error happened.
+});
