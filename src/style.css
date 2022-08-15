@@ -78,6 +78,72 @@ form input, button {
     margin-left: 0.4rem;
     color: rgb(15, 58, 169);
 }
+.divContainer{
+    border-color: rgb(104, 101, 101);
+}
+.titleLogoHome{
+    background-color: #14A508;
+    height: 50px;
+    font-size: 13px;
+    /*text-align: center;*/
+    font-weight: bold;
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 40px 20px;*/
+}
+.logout{
+    margin-left: 1rem;
+    color: #ffff;
+    font-weight: bold;
+    /*padding: 40px;*/
+}
+
+.divPublication{
+    background-color: rgb(171, 238, 169);
+    width: 250px;
+    height: 15vh;
+    border-radius: 10px;
+    margin-left: 55px;
+    margin-top: 40px;
+}
+.inputPublication{
+    width: 220px;
+    height: 7vh;
+    margin-left: 2.5vh;
+    margin-top: 2vh;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+.buttonPublication{
+    width: 85px;
+    height: 4vh;
+    margin-left: 150px;
+    background-color: #14A508;
+    color: #ffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.footer{
+    background-color: #14A508;
+    margin-top: 41.5vh;
+    height: 5rem;
+    
+}
+
+.showPublication{
+    background-color: rgb(171, 238, 169);
+    width: 250px;
+    height: 15vh;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
 
 @media only screen and (min-width: 768px) {
     .homeDiv {

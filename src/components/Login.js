@@ -29,7 +29,7 @@ export const Login = () => {
 
   const buttonLogin = document.createElement('input');
   buttonLogin.type = 'button';
-  buttonLogin.value = 'Inicia sesion';// publi-home
+  buttonLogin.value = 'Iniciar sesion';// publi-home
   buttonLogin.id = 'buttonLogin';
 
   // const buttonHome = document.createElement('button');
@@ -37,7 +37,9 @@ export const Login = () => {
 
   buttonLoginGoogle.addEventListener('click', () => {
     signInWithGoogle();
+    onNavigate('/home');
   });
+  //buttonLoginGoogle.addEventListener('click', () => onNavigate('/home'));
 
   buttonLogin.addEventListener('click', () => {
     const email = inputMail.value;
@@ -46,7 +48,7 @@ export const Login = () => {
     signInWithEmail(email, password);
   });
 
-  // buttonHome.addEventListener('click', () => onNavigate('/'));
+  buttonLogin.addEventListener('click', () => onNavigate('/home'));
 
   // HomeDiv.appendChild(buttonHome);
   HomeDiv.appendChild(titleLogo);

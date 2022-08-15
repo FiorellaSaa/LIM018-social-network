@@ -26,7 +26,8 @@ export const Register = () => {
   inputPassword.placeholder = 'Ingresa tu contraseña';
 
   const buttonRegister = document.createElement('input');
-  buttonRegister.type = 'button';
+  buttonRegister.type = 'submit';
+  buttonRegister.disabled = true;
   buttonRegister.value = 'Registrarse';
   buttonRegister.id = 'buttonRegister';
 
