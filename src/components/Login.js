@@ -19,6 +19,10 @@ export const Login = () => {
   buttonLoginGoogle.value = 'Inicia sesion Google';
   buttonLoginGoogle.id = 'buttonLoginGoogle';
 
+  const imgGoogle = document.createElement('img');
+  imgGoogle.className = 'imgGoogle';
+  imgGoogle.src = '../img/imgGoogle.png';
+
   const inputMail = document.createElement('input');
   inputMail.type = 'email';
   inputMail.placeholder = 'Ingresa tu correo';
@@ -36,8 +40,10 @@ export const Login = () => {
   // buttonHome.textContent = 'Regresar al home';
 
   buttonLoginGoogle.addEventListener('click', () => {
-    signInWithGoogle();
-    onNavigate('/home');
+    signInWithGoogle()
+    .then((userCredential) => {
+      onNavigate('/home');
+    });
   });
   //buttonLoginGoogle.addEventListener('click', () => onNavigate('/home'));
 
@@ -45,10 +51,14 @@ export const Login = () => {
     const email = inputMail.value;
     const password = inputPassword.value;
 
-    signInWithEmail(email, password);
+    signInWithEmail(email, password)
+    .then((userCredential) => {
+      console.log('Inicio sesión exitoso')
+      onNavigate('/home');
+    });
   });
 
-  buttonLogin.addEventListener('click', () => onNavigate('/home'));
+  
 
   // HomeDiv.appendChild(buttonHome);
   HomeDiv.appendChild(titleLogo);
@@ -57,6 +67,7 @@ export const Login = () => {
   formLogin.appendChild(inputPassword);
   HomeDiv.appendChild(formLogin);
   formLogin.appendChild(buttonLogin);
+  //buttonLoginGoogle.appendChild(imgGoogle);
 
   return HomeDiv;
 };

@@ -26,8 +26,8 @@ export const Register = () => {
   inputPassword.placeholder = 'Ingresa tu contraseña';
 
   const buttonRegister = document.createElement('input');
-  buttonRegister.type = 'submit';
-  buttonRegister.disabled = true;
+  buttonRegister.type = 'button';
+  //buttonRegister.disabled = true;
   buttonRegister.value = 'Registrarse';
   buttonRegister.id = 'buttonRegister';
 
@@ -42,9 +42,13 @@ export const Register = () => {
     const email = inputMail.value;
     const password = inputPassword.value;
 
-    createUserWithEmail(email, password);
+    createUserWithEmail(email, password)
+      .then((userCredential) =>{
+        console.log('Registro exitoso')
+        onNavigate('/login');
+      });
   });
-
+ 
 
   HomeDiv.appendChild(titleLogo);
   formLogin.appendChild(inputName);

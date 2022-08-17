@@ -63,33 +63,32 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider);
 // console.log(auth);
 
 export const createUserWithEmail = (email, password) => createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  //.then((userCredential) => {
     // Signed in
-    const user = userCredential.user;
-
-    console.log('registrado con exito');
+    //const user = userCredential.user;
+    //console.log('registrado con exito');
     // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+  //})
+  //.catch((error) => {
+    //const errorCode = error.code;
+    //const errorMessage = error.message;
     // ..
-  });
+  //});
 
 /* ---------- Firebase Auth - signInWithEmailAndPassword ---------- */
 
 export const signInWithEmail = (email, password) =>  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  //.then((userCredential) => {
     // Signed in
-    const user = userCredential.user;
+    //const user = userCredential.user;
     // ...
-    console.log('Iniciaste sesión');
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert('error de correo');
-  });
+    //console.log('Iniciaste sesión');
+  //})
+  //.catch((error) => {
+    //const errorCode = error.code;
+    //const errorMessage = error.message;
+    //alert('error de correo');
+  //});
 
 // signInWithEmail('rociolaboratoria@gmai.com', '12345678');
 

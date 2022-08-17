@@ -7,17 +7,33 @@ export const Home = () => {
   const divContainer = document.createElement('div');
   divContainer.className = 'divContainer';
 
-  const titleLogo = document.createElement('h2');
-  titleLogo.textContent = 'HEALTHY FOOD LOVERS';
-  titleLogo.className = 'titleLogoHome';
+  const headerTitle = document.createElement('div');
+  headerTitle.className = 'headerTitle';
 
-  const logout = document.createElement('a');
-  logout.textContent = 'Cerrar Sesión';
-  logout.className = 'logout';
+  const titleLogoHome = document.createElement('h2');
+  titleLogoHome.textContent = 'HEALTHY FOOD LOVERS';
+  titleLogoHome.className = 'titleLogoHome';
+
+  const logo = document.createElement('div');
+  logo.className = 'logo';
+  const logoImg = document.createElement('img');
+  logoImg.src = '../img/healthyfood.png';
+
+  const logoLogout = document.createElement('div');
+  logoLogout.className = 'logoLogout';
+  const imgLogoLogout = document.createElement('img');
+  imgLogoLogout.src = '../img/logout.png';
+
+  //const logout = document.createElement('a');
+  //logout.textContent = 'Cerrar Sesión';
+  //logout.className = 'logout';
   //logout.addEventListener('click', () => onNavigate('/'));
-  logout.addEventListener('click', () => {
-    signOutLogOut();
+  imgLogoLogout.addEventListener('click', () => {
+    signOutLogOut()
+    .then((userCredential) => {
+      onNavigate('/')
     });
+  });
     //logout.addEventListener('click', () => onNavigate('/'));
 
   const divPublication = document.createElement('div');
@@ -52,8 +68,13 @@ export const Home = () => {
   footer.className = 'footer';
 
   HomeDiv.appendChild(divContainer);
-  divContainer.appendChild(titleLogo);
-  titleLogo.appendChild(logout);
+  logo.appendChild(logoImg);
+  headerTitle.appendChild(logo);
+  headerTitle.appendChild(titleLogoHome);
+  headerTitle.appendChild(logoLogout);
+  logoLogout.appendChild(imgLogoLogout);
+  //headerTitle.appendChild(logout);
+  divContainer.appendChild(headerTitle);
   divContainer.appendChild(divPublication);
   divPublication.appendChild(inputPublication);
   divPublication.appendChild(buttonPublication);

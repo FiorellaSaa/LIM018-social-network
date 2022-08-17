@@ -30,6 +30,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.imgGoogle{
+    width: 5px;
+}
+
 .buttonDiv {
     margin-top: 5rem;
     padding: 3.5rem;
@@ -81,24 +85,39 @@ form input, button {
 .divContainer{
     border-color: rgb(104, 101, 101);
 }
-.titleLogoHome{
-    background-color: #14A508;
+.headerTitle{
+    background: #14A508;
     height: 50px;
-    font-size: 13px;
-    /*text-align: center;*/
-    font-weight: bold;
-    color: #ffff;
-    display: flex;
-    justify-content: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
+    /*text-align: center;*/
     /*padding: 40px 20px;*/
 }
-.logout{
-    margin-left: 1rem;
-    color: #ffff;
+
+.titleLogoHome{
     font-weight: bold;
-    /*padding: 40px;*/
+    color: #ffff;
+    font-size: 0.9rem;
+    
 }
+.logo img{
+    width:45px;
+    /*margin-right: 10px;*/
+    
+}
+.logoLogout img{
+    width:30px;
+    /*margin-left: 250px;*/
+    
+}
+/*.logout{
+    margin-left: 1rem;
+    color: rgb(26, 25, 25);
+    font-weight: bold;
+    padding: 40px;
+}*/
 
 .divPublication{
     background-color: rgb(171, 238, 169);
@@ -132,7 +151,7 @@ form input, button {
 .footer{
     background-color: #14A508;
     margin-top: 41.5vh;
-    height: 5rem;
+    height: 3.5rem;
     
 }
 
