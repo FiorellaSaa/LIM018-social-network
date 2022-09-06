@@ -30,6 +30,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.imgFood {
+    background: url('./img/heather-food.jpg');
+    display: block;
+    background-size: cover;
+}
 
 .buttonDiv {
     margin-top: 5rem;
@@ -315,10 +320,17 @@ form input, button {
         background-size: cover;
     }
 
-    .homeDiv img {
+    /*.homeDiv img {
         display: block;
-        /* height: 100vh; */
+        /* height: 100vh;
         margin-right: 10rem;
+    }*/
+    .imgFood {
+        background: url('./img/heather-food.jpg');
+        
+        background-size: cover;
+        width:600px;
+        height: 120vh;
     }
     
     #welcome {
