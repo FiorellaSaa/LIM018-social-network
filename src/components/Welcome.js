@@ -6,8 +6,9 @@ export const Welcome = () => {
   homeDiv.className = 'homeDiv';
   homeDiv.id = 'welcome';
 
-  const imgFood = document.createElement('img');
-  imgFood.src = '../img/heather-food.jpg';
+  const imgFood = document.createElement('div');
+  imgFood.className = 'imgFood';
+  //imgFood.src = '../img/heather-food.jpg';
   imgFood.alt = 'Healthy food';
 
   const welcomeDiv = document.createElement('div');
