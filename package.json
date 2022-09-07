@@ -15,7 +15,9 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage --env=jsdom",
-    "start": "serve src/ -s"
+    "start": "serve src/ -s",
+    "homepage": "https://FiorellaSaa.github.io/LIM018-social-network/",
+    "publish": "gh-pages -d src"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
