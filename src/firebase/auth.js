@@ -13,6 +13,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js';
 import {
   getFirestore, collection, addDoc, getDocs, query, orderBy, onSnapshot, doc, deleteDoc, updateDoc,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -79,7 +80,7 @@ const queryPost = query(postRef, orderBy('dateDescription', 'desc'));
 
 export function getPost() { return getDocs(queryPost); }
 
-export const onGetPost = (callback) => onSnapshot(collection(db, 'post'), callback);
+export const onGetPost = (callback) => onSnapshot(postRef, callback);
 
 export function deletePost(idPost) { return deleteDoc(doc(db, 'post', idPost)); }
 

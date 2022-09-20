@@ -43,9 +43,9 @@ export const Login = () => {
   buttonLogin.value = 'Inicia sesion';
   buttonLogin.id = 'buttonLogin';
 
-  const textRegister = document.createElement('p');
-  textRegister.textContent = 'No tengo cuenta';
-  textRegister.className = 'textRegister';
+  const textLogin = document.createElement('p');
+  textLogin.textContent = 'No tengo cuenta';
+  textLogin.className = 'textLogin';
   const backRegister = document.createElement('a');
   backRegister.textContent = 'Regístrate';
 
@@ -57,7 +57,9 @@ export const Login = () => {
         onNavigate('/home');
       })
       .catch((error) => {
+        // eslint-disable-next-line no-unused-vars
         const errorCode = error.code;
+        // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
       });
   });
@@ -69,11 +71,14 @@ export const Login = () => {
     signInWithEmail(email, password)
       .then((userCredential) => {
       // Signed in
+        // eslint-disable-next-line no-unused-vars
         const user = userCredential.user;
         onNavigate('/home');
       })
       .catch((error) => {
+        // eslint-disable-next-line no-unused-vars
         const errorCode = error.code;
+        // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
       });
   });
@@ -88,8 +93,8 @@ export const Login = () => {
   formLogin.appendChild(inputPassword);
   HomeDiv.appendChild(formLogin);
   formLogin.appendChild(buttonLogin);
-  HomeDiv.appendChild(textRegister);
-  textRegister.appendChild(backRegister);
+  HomeDiv.appendChild(textLogin);
+  textLogin.appendChild(backRegister);
 
   return HomeDiv;
 };

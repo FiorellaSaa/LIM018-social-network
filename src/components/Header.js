@@ -1,3 +1,4 @@
+// eslint-disable-next-line func-names
 export default function (div, callback) {
   const logoDiv = document.createElement('div');
   logoDiv.className = 'logoDiv';
