@@ -102,8 +102,23 @@ form input, button {
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: #7D7676;
 }
-
-#buttonPublication, #buttonSave {
+#buttonLoginGoogle{
+    background: url('./img/google.png');
+    background-size: 30px;
+    background-repeat:no-repeat;
+    background-position-x: 15px;
+    background-position-y: center;
+    background-color: #acacac;
+    color: #fff;
+    font-weight: bold;
+}
+#messageErrorLogin{
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bolder;
+}
+#buttonPublication, #buttonSave, #btnAcceptDelete{
     margin-top: 2rem;
     padding-left: 0;
     background-color: #1ed760;
@@ -241,7 +256,7 @@ form input, button {
     margin-bottom: 10px;
     font-size: 0.9rem;
     font-weight: bolder;
-    border: none;   
+    border: none;
 }
 
 .navDiv {
@@ -302,7 +317,37 @@ form input, button {
     display: none;
     margin: auto 6px;
 }
-
+.containerModalBeforeDelete{
+    height: 86vh;
+    width: 100vw;
+    margin: 50px auto;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+.modalBeforeDelete{
+    background: #D7FFC9;
+    margin: 11px auto;
+    padding: 10px;
+    width: 315px;
+    margin-top: 200px;
+    border-radius: 10px;
+}
+.textModalBeforeDelete{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+}
+#closeModalBeforeDelete {
+    font-size: 20px;
+    width: 30px;
+    margin-left: 250px;
+    text-align: right;
+    cursor: pointer;
+}
+#btnAcceptDelete{
+    width: 290px;
+}
 .editPost {
     background: url('./img/pencil.png');
     background-size: cover;
