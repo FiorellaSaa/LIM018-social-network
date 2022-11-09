@@ -178,7 +178,7 @@ export const Home = () => {
 
         deletePostDiv.addEventListener('click', () => {
           if (uidUserPost === auth.currentUser.uid) {
-            beforeDelete(principalContent, '¿Desea borrar el mensaje?', idPost);
+            beforeDelete(principalContent, '¿Deseas borrar el mensaje?', idPost);
             // deletePost(idPost);
           } else {
             // eslint-disable-next-line no-alert
