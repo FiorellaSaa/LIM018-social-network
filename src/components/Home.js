@@ -89,6 +89,7 @@ export const Home = () => {
   textPublication.placeholder = '¿Qué estás pensando?';
   textPublication.id = 'textPublication';
   const buttonPublication = document.createElement('button');
+  buttonPublication.type = 'button';
   buttonPublication.textContent = 'Publicar';
   buttonPublication.id = 'buttonPublication';
 
@@ -103,6 +104,9 @@ export const Home = () => {
       }
       userDiv.appendChild(userName);
       buttonPublication.addEventListener('click', () => {
+        if (textPublication.value === '') {
+          return true;
+        }
         addPost({
           nameUser: displayName,
           description: textPublication.value,
