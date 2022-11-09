@@ -27,8 +27,13 @@ export const Login = () => {
   /* ----- Boton para iniciar sesion con Google ----- */
   const buttonLoginGoogle = document.createElement('input');
   buttonLoginGoogle.type = 'button';
-  buttonLoginGoogle.value = 'Inicia sesion Google';
+  buttonLoginGoogle.value = 'Inicia sesión con Google';
   buttonLoginGoogle.id = 'buttonLoginGoogle';
+
+  const imageGoogle = document.createElement('img');
+  imageGoogle.id = 'imageGoogle';
+  imageGoogle.src = './img/google.png';
+  imageGoogle.alt = 'imagen de google';
 
   const inputMail = document.createElement('input');
   inputMail.type = 'email';
@@ -42,6 +47,9 @@ export const Login = () => {
   buttonLogin.type = 'button';
   buttonLogin.value = 'Inicia sesion';
   buttonLogin.id = 'buttonLogin';
+
+  const messageErrorLogin = document.createElement('p');
+  messageErrorLogin.id = 'messageErrorLogin';
 
   const textLogin = document.createElement('p');
   textLogin.textContent = 'No tengo cuenta';
@@ -80,6 +88,16 @@ export const Login = () => {
         const errorCode = error.code;
         // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
+        console.log(errorMessage);
+        if (errorMessage.includes('Error (auth/wrong-password)')) {
+          messageErrorLogin.innerHTML = 'Correo o contraseña incorrecta';
+        } else if (errorMessage.includes('Error (auth/invalid-email)')) {
+          messageErrorLogin.innerHTML = 'Correo o contraseña incorrecta';
+        } else if (errorMessage.includes('Error (auth/user-not-found)')) {
+          messageErrorLogin.innerHTML = 'Usuario no registrado';
+        } else {
+          messageErrorLogin.innerHTML = 'Ingrese los datos solicitados';
+        }
       });
   });
 
@@ -89,10 +107,12 @@ export const Login = () => {
   HomeDiv.appendChild(logoTitleDiv);
 
   formLogin.appendChild(buttonLoginGoogle);
+  buttonLoginGoogle.appendChild(imageGoogle);
   formLogin.appendChild(inputMail);
   formLogin.appendChild(inputPassword);
   HomeDiv.appendChild(formLogin);
   formLogin.appendChild(buttonLogin);
+  formLogin.appendChild(messageErrorLogin);
   HomeDiv.appendChild(textLogin);
   textLogin.appendChild(backRegister);
 
