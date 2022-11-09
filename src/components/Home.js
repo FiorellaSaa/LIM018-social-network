@@ -31,6 +31,38 @@ function editModal(div, text, idPost) {
   div.appendChild(divBlock);
 }
 
+function beforeDelete(div, string, idPost) {
+  const containerModalBeforeDelete = document.createElement('div');
+  containerModalBeforeDelete.className = 'containerModalBeforeDelete';
+
+  const modalBeforeDelete = document.createElement('div');
+  modalBeforeDelete.className = 'modalBeforeDelete';
+
+  const closeModalBeforeDelete = document.createElement('div');
+  closeModalBeforeDelete.textContent = '❌';
+  closeModalBeforeDelete.id = 'closeModalBeforeDelete';
+
+  const textModalBeforeDelete = document.createElement('h1');
+  textModalBeforeDelete.className = 'textModalBeforeDelete';
+  textModalBeforeDelete.textContent = string;
+
+  const btnAcceptDelete = document.createElement('button');
+  btnAcceptDelete.textContent = 'Aceptar';
+  btnAcceptDelete.id = 'btnAcceptDelete';
+
+  closeModalBeforeDelete.addEventListener('click', () => { containerModalBeforeDelete.style.display = 'none'; });
+  btnAcceptDelete.addEventListener('click', () => {
+    deletePost(idPost);
+    containerModalBeforeDelete.style.display = 'none';
+  });
+
+  modalBeforeDelete.appendChild(closeModalBeforeDelete);
+  modalBeforeDelete.appendChild(textModalBeforeDelete);
+  modalBeforeDelete.appendChild(btnAcceptDelete);
+  containerModalBeforeDelete.appendChild(modalBeforeDelete);
+  div.appendChild(containerModalBeforeDelete);
+}
+
 export const Home = () => {
   const HomeDiv = document.createElement('div');
   HomeDiv.classList = 'homeDiv homeView';
@@ -117,8 +149,6 @@ export const Home = () => {
         const deletePostDiv = document.createElement('div');
         deletePostDiv.className = 'deletePostDiv';
         deletePostDiv.id = 'deletePostDiv';
-        // const deleteIcon = document.createElement('img');
-        // deleteIcon.src = '../img/cross-circle.png';
 
         divHeaderPost.appendChild(nameUserPost);
         divHeaderPost.appendChild(editPostDiv);
@@ -144,7 +174,8 @@ export const Home = () => {
 
         deletePostDiv.addEventListener('click', () => {
           if (uidUserPost === auth.currentUser.uid) {
-            deletePost(idPost);
+            beforeDelete(principalContent, '¿Desea borrar el mensaje?', idPost);
+            // deletePost(idPost);
           } else {
             // eslint-disable-next-line no-alert
             alert('No puedes eliminar este post, por que no te pertenece!😎');
@@ -178,34 +209,22 @@ export const Home = () => {
 
   const homeIcon = document.createElement('div');
   homeIcon.className = 'homeIcon';
-  // const homeIconImg = document.createElement('img');
-  // homeIconImg.src = '../img/home-free.png';
 
   const publicationIcon = document.createElement('div');
   publicationIcon.className = 'publicationIcon';
-  // const publicationIconImg = document.createElement('img');
-  // publicationIconImg.src = '../img/edit-free-icon.png';
 
   const profileIcon = document.createElement('div');
   profileIcon.className = 'profileIcon';
-  // const profileIconImg = document.createElement('img');
-  // profileIconImg.src = '../img/user-white.png';
-
-  // homeIcon.appendChild(homeIconImg);
-  // publicationIcon.appendChild(publicationIconImg);
-  // profileIcon.appendChild(profileIconImg);
 
   navDiv.appendChild(homeIcon);
   navDiv.appendChild(publicationIcon);
   navDiv.appendChild(profileIcon);
 
   principalContent.appendChild(publicationDiv);
-  // principalContent.appendChild(post);
   publicationDiv.appendChild(textPublication);
   publicationDiv.appendChild(buttonPublication);
   HomeDiv.appendChild(headerDiv);
   HomeDiv.appendChild(principalContent);
-  // HomeDiv.appendChild(post);
   HomeDiv.appendChild(navDiv);
 
   return HomeDiv;
