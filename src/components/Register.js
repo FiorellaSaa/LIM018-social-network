@@ -1,13 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 import { createUserWithEmail, updateProfileUser } from '../firebase/auth.js';
-/* validateEmail('h9ola',null)
-validateEmail('h9ola',5)
-validateEmail('h9ola',[])
-validateEmail()
-validateEmail('h9ola@hotmail.com',elemnt)
-validateEmail('h9ola@hotmail',elemnt)
-validateEmail('@hotmail.com',elemnt) */
 
 // Función validación de email, inputMail
 export const validateEmail = (inputMail, error) => {
