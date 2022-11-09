@@ -7,7 +7,7 @@ import { onNavigate } from '../main.js';
 export function signOutUser() {
   return signOutLogin().then(() => {
     // eslint-disable-next-line no-alert
-    alert('Cerraste sesion');
+    // alert('Cerraste sesion');
     onNavigate('/');
   });
 }
