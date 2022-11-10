@@ -4,7 +4,6 @@ import { createUserWithEmail, updateProfileUser } from '../firebase/auth.js';
 
 // Función validación de email, inputMail
 export const validateEmail = (inputMail, error) => {
-  // debugger;
   const messageRegister = error;
   // eslint-disable-next-line no-useless-escape
   const validateEmailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
@@ -77,8 +76,6 @@ export const Register = () => {
 
   // eslint-disable-next-line consistent-return
   buttonRegister.addEventListener('click', () => {
-    // debugger;
-    console.log('¨llego al click');
     if (inputName.value === '' || inputMail.value === '' || inputPassword.value === '') {
       // eslint-disable-next-line no-return-assign
       return (messageRegister.innerHTML = 'Ingresa los datos solicitados');
@@ -98,26 +95,19 @@ export const Register = () => {
       return (messageRegister.innerHTML = 'Password como mínimo con 6 caracteres');
     }
 
-    // console.log('despues de validaciones');
     createUserWithEmail(inputMail.value, inputPassword.value)
       .then((userCredential) => {
         const user = userCredential.user;
         // user.displayName = nameUser;
         const uid = user.uid;
-        // console.log('dentro del then');
-        // debugger;
         updateProfileUser(inputName.value, uid)
           // eslint-disable-next-line no-console
           .then(() => console.log('Nombre actualizado'));
         // eslint-disable-next-line no-console
-        // console.log(user);
-        // eslint-disable-next-line no-console
-        console.log('Registro exitoso');
       }).catch((error) => {
         console.log(error);
       });
     onNavigate('/login');
-    // console.log('aDIOS');
   });
 
   imgLogoDiv.appendChild(imgLogo);

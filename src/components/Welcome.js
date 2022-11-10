@@ -8,8 +8,6 @@ export const Welcome = () => {
 
   const imgFood = document.createElement('div');
   imgFood.className = 'imgFood';
-  // imgFood.src = '../img/heather-food.jpg';
-  // imgFood.alt = 'Healthy food';
 
   const welcomeDiv = document.createElement('div');
   welcomeDiv.className = 'welcomeDiv';
@@ -19,9 +17,6 @@ export const Welcome = () => {
   logoTitleDiv.className = 'logoTitleDiv';
   const imgLogoDiv = document.createElement('div');
   imgLogoDiv.className = 'imgLogoDiv imgLogo';
-  // const imgLogo = document.createElement('img');
-  // imgLogo.src = '../img/comida-sana-green.png';
-  // imgLogo.id = 'imgLogo';
 
   const titleLogo = document.createElement('h1');
   titleLogo.textContent = 'HEALTHY FOOD LOVERS';
@@ -47,13 +42,11 @@ export const Welcome = () => {
 
   homeDiv.appendChild(imgFood);
 
-  // imgLogoDiv.appendChild(imgLogo);
   logoTitleDiv.appendChild(imgLogoDiv);
   logoTitleDiv.appendChild(titleLogo);
   welcomeDiv.appendChild(logoTitleDiv);
 
   homeDiv.appendChild(welcomeDiv);
-  // welcomeDiv.appendChild(titleLogo);
   buttonDiv.appendChild(buttonRegister);
   buttonDiv.appendChild(buttonLogin);
   welcomeDiv.appendChild(buttonDiv);

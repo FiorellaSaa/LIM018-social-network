@@ -103,6 +103,7 @@ export const Home = () => {
         userDiv.removeChild(userDiv.firstChild);
       }
       userDiv.appendChild(userName);
+      // eslint-disable-next-line consistent-return
       buttonPublication.addEventListener('click', () => {
         if (textPublication.value === '') {
           return true;
@@ -127,7 +128,6 @@ export const Home = () => {
   containerDivPost.className = 'containerDivPost';
   containerDivPost.id = 'containerDivPost';
   onGetPost(() => {
-    // console.log("¨callbackstateChangedUser")
     containerDivPost.innerHTML = '';
     getPost().then((post) => {
       post.forEach((doc) => {
@@ -148,17 +148,13 @@ export const Home = () => {
         const editPostDiv = document.createElement('div');
         editPostDiv.classList = 'editPost';
         editPostDiv.id = 'editPost';
-        // const editIcon = document.createElement('img');
-        // editIcon.src = '../img/pencil.png';
         const deletePostDiv = document.createElement('div');
         deletePostDiv.className = 'deletePostDiv';
         deletePostDiv.id = 'deletePostDiv';
 
         divHeaderPost.appendChild(nameUserPost);
         divHeaderPost.appendChild(editPostDiv);
-        // editPostDiv.appendChild(editIcon);
         divHeaderPost.appendChild(deletePostDiv);
-        // deletePostDiv.appendChild(deleteIcon);
 
         if (uidUserPost === auth.currentUser.uid) {
           deletePostDiv.style.display = 'block';
@@ -179,7 +175,6 @@ export const Home = () => {
         deletePostDiv.addEventListener('click', () => {
           if (uidUserPost === auth.currentUser.uid) {
             beforeDelete(principalContent, '¿Deseas borrar el mensaje?', idPost);
-            // deletePost(idPost);
           } else {
             // eslint-disable-next-line no-alert
             alert('No puedes eliminar este post, por que no te pertenece!😎');

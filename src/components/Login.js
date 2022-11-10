@@ -11,9 +11,6 @@ export const Login = () => {
   logoTitleDiv.className = 'logoTitleDiv';
   const imgLogoDiv = document.createElement('div');
   imgLogoDiv.className = 'imgLogoDiv imgLogo';
-  // const imgLogo = document.createElement('img');
-  // imgLogo.src = '../img/comida-sana-green.png';
-  // imgLogo.id = 'imgLogo';
 
   const titleLogo = document.createElement('h1');
   titleLogo.textContent = 'HEALTHY FOOD LOVERS';

@@ -1,6 +1,5 @@
 // aqui exportaras las funciones que necesites
 import { signOutLogin } from '../firebase/auth.js';
-// import { signOutLogin, getPost, stateChangedUser } from '../firebase/auth.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
